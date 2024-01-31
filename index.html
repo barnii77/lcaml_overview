@@ -1,83 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCaml Programming Language</title>
-    <style>
-        /* Basic CSS for styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        iframe {
-            width: 100%;
-            height: 500px; /* Adjust height as needed */
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCaml Programming Language</title>
+  <style>
+    /* Basic CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      /* Adjust height as needed */
+      border: none;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
     <h1>Welcome to LCaml</h1>
-    <p>LCaml is an interpreted programming language designed for trolling people (thus, the compiler is written in python). By the way, the L stands for Loser because if you're on this page, you might be one... (lol)<fill in with your purpose>.</p>
-    
+    <p>LCaml is an interpreted programming language designed for trolling people (thus, the compiler is written in
+      python). By the way, the L stands for Loser because if you're on this page, you might be one... (lol)<fill in with
+        your purpose>.</p>
+
     <h2>Features of LCaml:</h2>
     <ul>
-        <li>functions as values</li>
-        <li>functions as values</li>
-        <li>functions as values</li>
-        <li>will have single-file interpreter</li>
-        <li>troll</li>
-        <li>bugs</li>
+      <li>functions as values</li>
+      <li>functions as values</li>
+      <li>functions as values</li>
+      <li>will have single-file interpreter</li>
+      <li>troll</li>
+      <li>bugs</li>
     </ul>
-    
+
     <h2>Getting Started</h2>
     <p>To start coding in LCaml, you'll need:</p>
     <ol>
-        <li>An LCaml interpreter (download from <a href="https://github.com/barnii77/lcaml_py">github repo</a>)</li>
-        <li>A text editor or IDE (use neovim!!)</li>
-        <li>Reference materials and tutorials (None exist as of 31.01.2024)</li>
+      <li>An LCaml interpreter (download from <a href="https://github.com/barnii77/lcaml_py">github repo</a>)</li>
+      <li>A text editor or IDE (use neovim!!)</li>
+      <li>Reference materials and tutorials (None exist as of 31.01.2024)</li>
     </ol>
-    
+
     <h2>Sample Code</h2>
     <pre><code>
-    let factorial = |n| {
-      if (n <= 0) {
-        return 1;
-      } else {
-        return n * factorial (n - 1);
-      }
-    };
-
-    let value = 5;
-    let fact = factorial value;
-    return fact;  -- return 120 as result of file
-    </code></pre>
+        let factorial = |n| {
+        if (n <= 0) { return 1; } else { return n * factorial (n - 1); } }; let value=5; let fact=factorial value;
+          return fact; -- return 120 as result of file </code>
+    </pre>
 
     <h2>Learn More</h2>
-    <p>Visit the <a href="https://github.com/barnii77/lcaml_py">LCaml Documentation</a> for more information on syntax, standard library, and advanced features.</p>
-    
+    <p>Visit the <a href="https://github.com/barnii77/lcaml_py">LCaml Documentation</a> for more information on syntax,
+      standard library, and advanced features.</p>
+
     <!-- Embed ChatGPT interface -->
-    <iframe src="https://gptchatly.com/" title="ChatGPT"></iframe>
-</div>
+    <iframe id="GPTChatly" src="https://gptchatly.com/" title="ChatGPT"></iframe>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Get the iframe element
+      var iframe = document.getElementById('GPTChatly');
+
+      // Wait for iframe to load
+      iframe.onload = function () {
+        // Access the iframe's content window
+        var iframeContentWindow = iframe.contentWindow;
+
+        // Check if the iframe has loaded successfully
+        if (iframeContentWindow) {
+          // Set the text to paste into the input field
+          var textToPaste = "Your text goes here.";
+
+          // Paste text into the input field
+          iframeContentWindow.postMessage({action: 'pasteText', text: textToPaste}, '*');
+
+          // Click the button in the iframe
+          iframeContentWindow.postMessage({action: 'clickButton'}, '*');
+        }
+      };
+    });
+  </script>
 
 </body>
+
 </html>
