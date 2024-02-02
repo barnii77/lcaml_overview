@@ -92,59 +92,59 @@ return fact; -- return 120 as result of file </code>
     <iframe id="GPTChatly" src="https://gptchatly.com/" title="ChatGPT"></iframe>
   </div>
 
-  <script>
-    <!-- window.addEventListener('DOMContentLoaded', (event) => { -->
-    <!--   // Get the iframe element -->
-    <!--   var iframe = document.getElementById('GPTChatly'); -->
+  <!-- <script> -->
+  <!--   <!-- window.addEventListener('DOMContentLoaded', (event) => { --> -->
+  <!--   <!--   // Get the iframe element --> -->
+  <!--   <!--   var iframe = document.getElementById('GPTChatly'); --> -->
 
-    <!--   // Wait for iframe to load -->
-    <!--   iframe.onload = function () { -->
-    <!--     // Access the iframe's content window -->
-    <!--     var iframeContentWindow = iframe.contentWindow; -->
+  <!--   <!--   // Wait for iframe to load --> -->
+  <!--   <!--   iframe.onload = function () { --> -->
+  <!--   <!--     // Access the iframe's content window --> -->
+  <!--   <!--     var iframeContentWindow = iframe.contentWindow; --> -->
 
-    <!--     // Check if the iframe has loaded successfully -->
-    <!--     if (iframeContentWindow) { -->
-    <!--       // Set the text to paste into the input field -->
-    <!--       var textToPaste = "Your text goes here."; -->
+  <!--   <!--     // Check if the iframe has loaded successfully --> -->
+  <!--   <!--     if (iframeContentWindow) { --> -->
+  <!--   <!--       // Set the text to paste into the input field --> -->
+  <!--   <!--       var textToPaste = "Your text goes here."; --> -->
 
-    <!--       // Paste text into the input field -->
-    <!--       iframeContentWindow.postMessage({action: 'pasteText', text: textToPaste}, '*'); -->
+  <!--   <!--       // Paste text into the input field --> -->
+  <!--   <!--       iframeContentWindow.postMessage({action: 'pasteText', text: textToPaste}, '*'); --> -->
 
-    <!--       // Click the button in the iframe -->
-    <!--       iframeContentWindow.postMessage({action: 'clickButton'}, '*'); -->
-    <!--     } -->
-    <!--   }; -->
-    <!-- }); -->
+  <!--   <!--       // Click the button in the iframe --> -->
+  <!--   <!--       iframeContentWindow.postMessage({action: 'clickButton'}, '*'); --> -->
+  <!--   <!--     } --> -->
+  <!--   <!--   }; --> -->
+  <!--   <!-- }); --> -->
 
-    window.addEventListener('DOMContentLoaded', (event) => {
-      // Get the iframe element
-      var iframe = document.getElementById('GPTChatly');
+  <!--   window.addEventListener('DOMContentLoaded', (event) => { -->
+  <!--     // Get the iframe element -->
+  <!--     var iframe = document.getElementById('GPTChatly'); -->
 
-      // Wait for iframe to load
-      iframe.onload = function () {
-        // Access the iframe's content window
-        var iframeContentWindow = iframe.contentWindow;
+  <!--     // Wait for iframe to load -->
+  <!--     iframe.onload = function () { -->
+  <!--       // Access the iframe's content window -->
+  <!--       var iframeContentWindow = iframe.contentWindow; -->
 
-        // Check if the iframe has loaded successfully
-        if (iframeContentWindow) {
-          // Set the text to type into the textarea
-          var textToType = "Your text goes here.";
+  <!--       // Check if the iframe has loaded successfully -->
+  <!--       if (iframeContentWindow) { -->
+  <!--         // Set the text to type into the textarea -->
+  <!--         var textToType = "Your text goes here."; -->
 
-          // Find the textarea element in the iframe content
-          var textarea = iframeContentWindow.document.getElementById('user-input');
+  <!--         // Find the textarea element in the iframe content -->
+  <!--         var textarea = iframeContentWindow.document.getElementById('user-input'); -->
 
-          // Set the value of the textarea to the desired text
-          textarea.value = textToType;
+  <!--         // Set the value of the textarea to the desired text -->
+  <!--         textarea.value = textToType; -->
 
-          // Find the button element in the iframe content
-          var button = iframeContentWindow.document.querySelector('button[type="submit"]');
+  <!--         // Find the button element in the iframe content -->
+  <!--         var button = iframeContentWindow.document.querySelector('button[type="submit"]'); -->
 
-          // Click the button
-          button.click();
-        }
-      };
-    });
-  </script>
+  <!--         // Click the button -->
+  <!--         button.click(); -->
+  <!--       } -->
+  <!--     }; -->
+  <!--   }); -->
+  <!-- </script> -->
 
 </body>
 
