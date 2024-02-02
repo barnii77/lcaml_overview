@@ -93,6 +93,29 @@ return fact; -- return 120 as result of file </code>
   </div>
 
   <script>
+    <!-- window.addEventListener('DOMContentLoaded', (event) => { -->
+    <!--   // Get the iframe element -->
+    <!--   var iframe = document.getElementById('GPTChatly'); -->
+
+    <!--   // Wait for iframe to load -->
+    <!--   iframe.onload = function () { -->
+    <!--     // Access the iframe's content window -->
+    <!--     var iframeContentWindow = iframe.contentWindow; -->
+
+    <!--     // Check if the iframe has loaded successfully -->
+    <!--     if (iframeContentWindow) { -->
+    <!--       // Set the text to paste into the input field -->
+    <!--       var textToPaste = "Your text goes here."; -->
+
+    <!--       // Paste text into the input field -->
+    <!--       iframeContentWindow.postMessage({action: 'pasteText', text: textToPaste}, '*'); -->
+
+    <!--       // Click the button in the iframe -->
+    <!--       iframeContentWindow.postMessage({action: 'clickButton'}, '*'); -->
+    <!--     } -->
+    <!--   }; -->
+    <!-- }); -->
+
     window.addEventListener('DOMContentLoaded', (event) => {
       // Get the iframe element
       var iframe = document.getElementById('GPTChatly');
@@ -104,14 +127,20 @@ return fact; -- return 120 as result of file </code>
 
         // Check if the iframe has loaded successfully
         if (iframeContentWindow) {
-          // Set the text to paste into the input field
-          var textToPaste = "Your text goes here.";
+          // Set the text to type into the textarea
+          var textToType = "Your text goes here.";
 
-          // Paste text into the input field
-          iframeContentWindow.postMessage({action: 'pasteText', text: textToPaste}, '*');
+          // Find the textarea element in the iframe content
+          var textarea = iframeContentWindow.document.getElementById('user-input');
 
-          // Click the button in the iframe
-          iframeContentWindow.postMessage({action: 'clickButton'}, '*');
+          // Set the value of the textarea to the desired text
+          textarea.value = textToType;
+
+          // Find the button element in the iframe content
+          var button = iframeContentWindow.document.querySelector('button[type="submit"]');
+
+          // Click the button
+          button.click();
         }
       };
     });
